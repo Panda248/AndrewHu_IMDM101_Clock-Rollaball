@@ -8,6 +8,8 @@ public class CameraFollow : MonoBehaviour
     private Vector3 vecToCubeDisp;
     private Vector3 vecToCube;
 
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +25,11 @@ public class CameraFollow : MonoBehaviour
         //{
         //    transform.position += (transform.position + vecToCubeDisp) * 0.5f;
         //}
-        //else
-        {
-            transform.position = vecToCubeDisp;
-        }
+        //
+        transform.position = vecToCubeDisp;
+
+        
     }
+
+    
 }
