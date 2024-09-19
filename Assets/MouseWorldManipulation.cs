@@ -29,7 +29,15 @@ public class MouseWorldManipulation : MonoBehaviour
     {
         if(selectedObject != null)
         {
-            MouseTransformObject();
+            if(selectedObject.GetComponent<AnchoredObject>() != null)
+            {
+                MouseRotateAnchoredObject();
+            }
+            else
+            {
+                MouseTransformObject();
+            }
+            
         }
     }
     void MouseTransformObject()
@@ -38,9 +46,9 @@ public class MouseWorldManipulation : MonoBehaviour
         selectedObject.transform.position = targetTransform;
     }
 
-    void MouseTransformAnchoredObject()
+    void MouseRotateAnchoredObject()
     {
-
+        
     }
     void MouseSelectObject()
     {
@@ -61,8 +69,11 @@ public class MouseWorldManipulation : MonoBehaviour
         }
         else
         {
-            selectedObject.GetComponent<Renderer>().material.color = Color.white;
-            selectedObject = null;
+            if (selectedObject != null)
+            {
+                selectedObject.GetComponent<Renderer>().material.color = Color.white;
+                selectedObject = null;
+            }
         }
     }
 }
