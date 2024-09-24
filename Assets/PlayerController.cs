@@ -13,47 +13,36 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //if(rbRef.velocity.x != 0)
-        //{
-        //    rbRef.velocity.x -= 1;
-        //}
-        //if (rbRef.velocity.z != 0)
-        //{
-        //    rbRef.velocity.z -= 1;
-        //}
         Controls();
     }
 
     void Controls()
     {
-        Vector3 vel = rbRef.velocity;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rbRef.position += new Vector3(0, 10, 0);
+            rbRef.velocity += new Vector3(0, 10, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            vel.z = 10;
+            rbRef.AddForce(new Vector3(0, 0, 10));
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            vel.z = -10;
+            rbRef.AddForce(new Vector3(0, 0, -10));
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            vel.x = -10;
+            rbRef.AddForce(new Vector3(-10, 0, 0));
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            vel.x = 10;
+            rbRef.AddForce(new Vector3(10, 0, 0));
         }
-
-        rbRef.velocity = vel;
     }
 }

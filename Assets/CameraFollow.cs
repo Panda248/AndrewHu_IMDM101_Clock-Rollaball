@@ -4,29 +4,30 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    private GameObject cube;
-    private Vector3 vecToCubeDisp;
-    private Vector3 vecToCube;
+    [SerializeField]
+    GameObject player;
+
+    private Vector3 vecToPlayerDisp;
+    private Vector3 vecToPlayer;
 
    
 
     // Start is called before the first frame update
     void Start()
     {
-        cube = GameObject.Find("Cube");
-        vecToCube = transform.position - cube.transform.position;
+        vecToPlayer = transform.position - player.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        vecToCubeDisp = vecToCube + cube.transform.position;
+        vecToPlayerDisp = vecToPlayer + player.transform.position;
         //if((transform.position + vecToCube - vecToCubeDisp).magnitude > 1)
         //{
         //    transform.position += (transform.position + vecToCubeDisp) * 0.5f;
         //}
         //
-        transform.position = vecToCubeDisp;
+        transform.position = vecToPlayerDisp;
 
         
     }
