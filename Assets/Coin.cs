@@ -15,4 +15,9 @@ public class Coin : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+
+    }
 }
