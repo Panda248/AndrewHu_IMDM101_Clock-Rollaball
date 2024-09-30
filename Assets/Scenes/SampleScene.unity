@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 319187337}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1889,7 +1889,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 135788158}
-  m_LocalEulerAnglesHint: {x: 0, y: 724.8, z: 60}
+  m_LocalEulerAnglesHint: {x: 0, y: 337.70648, z: 60}
 --- !u!95 &1210912269
 Animator:
   serializedVersion: 5
@@ -2063,7 +2063,7 @@ GameObject:
   - component: {fileID: 1338290747}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
